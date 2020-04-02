@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta charset="utf8">
+    <title>AngularJS Application</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script>
+        var app=angular.module("myApp",[])
+        app.controller("myCtrl",function ($scope,$rootScope) {
+            $scope.students=[
+                {name:"Emad",age:25,addr:"Bahri"},
+                {name:"Mustafa",age:45,addr:"Halfaya"},
+                {name:"Izzeldeen",age:23,addr:"Suba"},
+                {name:"Fatima",age:20,addr:"Khartoim"}
+
+            ]
+        })
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="container">
+
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Number</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+        </tr>
+        <tr ng-repeat="student in students">
+            <td>{{$index+1}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.addr}}
+             <a href="#" class="close" ng-click="students.splice($index,1)">x</a>
+            </td>
+        </tr>
+    </table>
+
+    <form ng-submit="students.push({name:x,age:y,addr:z});x='';y='';z=''">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" ng-model="x" required>
+        </div>
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" class="form-control" ng-model="y" required>
+        </div>
+        <div class="form-group">
+            <label>Address</label>
+            <textarea class="form-control" ng-model="z" required></textarea>
+        </div>
+        <button class="btn btn-success">Add Student</button>
+    </form>
+
+</div>
+
+
+
+</body>
+</html>

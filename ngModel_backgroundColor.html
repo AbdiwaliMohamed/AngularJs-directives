@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta charset="utf8">
+    <title>AngularJS Application</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script>
+        var app=angular.module("myApp",[])
+        app.controller("myCtrl",function ($scope,$rootScope) {
+
+        })
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" class="bg-{{x}}">
+<div class="container">
+
+
+    <div class="form-group">
+        <label>Background Color</label>
+        <input type="text" class="form-control" ng-model="x">
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

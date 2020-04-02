@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta charset="utf8">
+    <title>AngularJS Application</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script>
+        var app=angular.module("myApp",[])
+        app.controller("myCtrl",function ($scope,$rootScope) {
+            $scope.gender="male"
+        })
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="container">
+
+
+    <h4>Gender</h4>
+    <div class="radio">
+        <label><input type="radio" ng-model="gender" value="male">Male </label>
+    </div>
+    <div class="radio">
+        <label><input type="radio" ng-model="gender" value="female">Female </label>
+    </div>
+
+
+
+    <div class="well">
+        <h5>I am {{gender}}</h5>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

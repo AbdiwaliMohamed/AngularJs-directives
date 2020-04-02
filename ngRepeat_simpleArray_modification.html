@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="utf8">
+    <title>AngularJS Application</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script>
+        var app=angular.module("myApp",[])
+        app.controller("myCtrl",function ($scope,$rootScope) {
+             $scope.teachers=["Ali","Hassan","Ahmed"]
+        })
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="container">
+
+  <ul class="list-group">
+      <li class="list-group-item active">Teachers</li>
+      <li class="list-group-item" ng-repeat="teacher in teachers track by $index">
+          <a href="#" class="close" ng-click="teachers.splice($index,1)">x</a>
+          {{$index+1}}- {{teacher}}
+
+      </li>
+  </ul>
+<form ng-submit="teachers.push(x);x=''">
+    <input type="text" class="form-control" placeholder="New Teacher" ng-model="x" required>
+
+    <button class="btn btn-success" >Add Teacher</button>
+</form>
+
+</div>
+
+
+
+</body>
+</html>

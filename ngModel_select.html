@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="utf8">
+    <title>AngularJS Application</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script>
+        var app=angular.module("myApp",[])
+        app.controller("myCtrl",function ($scope,$rootScope) {
+
+        })
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<div class="container">
+
+
+    <div class="form-group" ng-init="level='sec'">
+        <label>Education Level</label>
+        <select ng-model="level" class="form-control">
+            <option value="elem">Elementary</option>
+            <option value="sec">Secondary</option>
+            <option value="under" selected>Undergraduate</option>
+            <option value="post">Postgraduate</option>
+        </select>
+    </div>
+
+
+    <div class="well">
+        {{level}}
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
